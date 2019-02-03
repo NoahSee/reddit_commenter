@@ -3,7 +3,7 @@ import json
 import praw
 
 from ProcessSubmission import process_submission
-from FormatComment import format_comment
+# from FormatComment import format_comment
 from Logging import LoggingHandler
 
 ### Initialise #####################################################################################
@@ -41,10 +41,13 @@ def process_subreddit(test = False):
         else:
             Log('new submission - id {}'.format(submission.id))
             db.AddSubmissionRecord( { "submission_id" : submission.id , "url" : submission.url } )
-            content = process_submission(submission)
-            if content:
-                comment = format_comment(content)
-                # submission.reply(comment)
+            comment = process_submission(submission)
+            if comment:
+                Log('commenting submission - id {}'.format(submission.id))
+                try:
+                    submission.reply(comment)
+                except Exception as e:
+                    Log(e)
 
 ### Execution logic ###############################################################################
 
