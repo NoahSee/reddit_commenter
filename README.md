@@ -15,7 +15,7 @@ To install packages on Cloud9
 AWS Lambda
 
 Trigger
-- Cloudwatch Events > rate(5 minutes)
+- Cloudwatch Events > "rate(5 minutes)"
 
 Test
 - Amazon Cloudwatch > Runs once, no args
