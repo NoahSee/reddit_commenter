@@ -13,3 +13,9 @@ To install packages on Cloud9
 - sudo pip-3.6 install bs4
 
 AWS Lambda
+
+Trigger
+- Cloudwatch Events > rate(5 minutes)
+
+Test
+- Amazon Cloudwatch > Runs once, no args
