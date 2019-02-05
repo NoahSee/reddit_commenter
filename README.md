@@ -20,7 +20,7 @@ id, title, url, created_utc
 
 #### Layer
 Allows external libraries to be used in AWS Lambda.
-- package.zip
+- package.zip is used to create the layer.
 - includes dependencies for the following external libraries:
   - newspaper
   - bs4
