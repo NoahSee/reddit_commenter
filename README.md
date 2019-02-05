@@ -1,31 +1,27 @@
 # reddit_commenter
 
-WIP
+# Deployed on AWS Lambda + MongoDB Atlas
 
-Deployment
+# AWS Lambda
 
-ASW Cloud9 (Deployment testing)
+Layer
+Allows external libraries to be used in AWS Lambda.
+- package.zip
+- includes dependencies for the following external libraries:
+  - newspaper
+  - bs4
+  - praw
+  - tldextract
+  - pymongo
 
-For installing packages, set Active Directory to:
-- [environment\RedditCommenter\Redditcommenter]
-
-The following is necessary because of the active directory in lambda is different.
-For running script, set Active Directory to:
-- [environment\RedditCommenter]
-- python3 RedditCommenter/lambda_handler.py
-
-To install packages on Cloud9, run the following in the bash terminal
-- pip-3.6 install praw -t .
-- pip-3.6 install tldextract -t .
-- pip-3.6 install newspaper3k -t .
-- pip-3.6 install bs4 -t .
-- pip-3.6 install pymongo -t .
-- pip-3.6 install dnspython -t .
-
-AWS Lambda
+Handler
+Calls function in .py file when triggered.
+- lambda_function.lambda_handler
 
 Trigger
-- Cloudwatch Events > "rate(5 minutes)"
+Runs script every 5 minutes.
+- Cloudwatch Events as "every_5_minutes"
 
 Test
-- Amazon Cloudwatch > Runs once, no args
+Runs script once manually.
+- Amazon Cloudwatch as "RunOnce"
