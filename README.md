@@ -39,3 +39,9 @@ Runs script every 5 minutes.
 #### Test
 Runs script once manually.
 - Amazon Cloudwatch as "RunOnce"
+
+## Version History
+
+#### 5/2/19
+- Running on AWS Lambda
+- Initial code obtained from https://github.com/fterh/sneakpeek
