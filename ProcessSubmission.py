@@ -13,8 +13,12 @@ def process_submission(submission):
         # using sneakpeek code
         handler = HandlerManager.get_handler(submission.url)
         comment_raw = handler.handle(submission.url)
-        comment = format_comment(comment_raw)
-        return comment
+
+        if comment_raw:
+            comment = format_comment(comment_raw)
+            return comment
+        else:
+            return False
 
     else:
         print('decline submission - id {} {}'.format(submission.id, submission.url))
