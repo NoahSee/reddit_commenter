@@ -19,8 +19,9 @@ id, title, url, created_utc
 ## AWS Lambda
 
 #### Layer
-Allows external libraries to be used in AWS Lambda.
+###### Allows external libraries to be used in AWS Lambda.
 - package.zip is used to create the layer.
+- package.zip must incude folder lib > python3.6 > site-packages > ...
 - includes dependencies for the following external libraries:
   - newspaper
   - bs4
@@ -29,15 +30,15 @@ Allows external libraries to be used in AWS Lambda.
   - pymongo
 
 #### Handler
-Calls function lambda_handler() in lambda_function.py file when triggered.
+###### Calls function lambda_handler() in lambda_function.py file when triggered.
 - lambda_function.lambda_handler
 
 #### Trigger
-Runs script every 5 minutes.
+####### Runs script every 5 minutes.
 - Cloudwatch Events as "every_5_minutes"
 
 #### Test
-Runs script once manually.
+###### Runs script once manually.
 - Amazon Cloudwatch as "RunOnce"
 
 ## Version History
