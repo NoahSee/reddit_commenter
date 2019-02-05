@@ -29,7 +29,7 @@ Allows external libraries to be used in AWS Lambda.
   - pymongo
 
 #### Handler
-Calls function in .py file when triggered.
+Calls function lambda_handler() in lambda_function.py file when triggered.
 - lambda_function.lambda_handler
 
 #### Trigger
