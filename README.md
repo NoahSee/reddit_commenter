@@ -14,7 +14,7 @@ MyDatabase
 SubmissionRecords
 
 #### Doccument
-[id, title, url, created_utc]
+id, title, url, created_utc
 
 ## AWS Lambda
 
