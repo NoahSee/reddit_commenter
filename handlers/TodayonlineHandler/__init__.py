@@ -2,10 +2,7 @@ import json
 import requests
 
 from bs4 import BeautifulSoup
-
-from comment import Comment
 from handlers.AbstractBaseHandler import AbstractBaseHandler, HandlerError
-
 
 class TodayonlineHandler(AbstractBaseHandler):
     @classmethod
@@ -18,4 +15,5 @@ class TodayonlineHandler(AbstractBaseHandler):
         title = article["title"]
         body = BeautifulSoup(article["body"], "html.parser").get_text()
         body = body.replace("\n", "\n\n")  # Markdown requires 2 \n to create a new paragraph
-        return Comment(title, body)
+
+        return { "title" : title , "body" : body }

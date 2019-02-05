@@ -3,8 +3,6 @@ import requests
 import textwrap
 
 from bs4 import BeautifulSoup
-
-from comment import Comment
 from handlers.AbstractBaseHandler import AbstractBaseHandler, HandlerError
 
 
@@ -30,4 +28,4 @@ class RicemediaHandler(AbstractBaseHandler):
         article_body = article_body.replace("\n", "\n\n")  # Markdown requires 2 \n to create a new paragraph
         article_title = soup.find(name="h2", class_="post-title").text
 
-        return Comment(article_title, article_body.replace("\xa0", " "))
+        return { "title" : article_title , "body" : article_body.replace("\xa0", " ") }

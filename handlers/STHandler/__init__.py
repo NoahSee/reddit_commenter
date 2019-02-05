@@ -6,7 +6,6 @@ import requests
 
 from bs4 import BeautifulSoup
 
-from comment import Comment
 from difflib import SequenceMatcher
 from handlers.AbstractBaseHandler import AbstractBaseHandler, HandlerError
 from newspaper import Article
@@ -49,11 +48,7 @@ class STHandler(AbstractBaseHandler):
         article = Article(cls.url)
         article.download()
         article.parse()
-
-        title = article.title
-        body = article.text
-
-        return Comment(title, body)
+        return { "title" : article.title , "body" : article.text }
 
     @classmethod
     def handlePremium(cls):
@@ -118,13 +113,13 @@ class STHandler(AbstractBaseHandler):
         try:
             article.parse()
         except:
-            return Comment('','')
+            return None
 
         title = article.title.replace("\xad", "") # clean the text
         body = article.text.replace("\xad", "") # clean the text
 
         print(f"checking the article in this url: {url} with title {title}")
-        return Comment(title, body)
+        return { "title" : title , "body" : body }
 
     @classmethod
     def getArticlesIndex(cls, days_offset):

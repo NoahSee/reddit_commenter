@@ -1,8 +1,5 @@
 from newspaper import Article
-
-from comment import Comment
 from handlers.AbstractBaseHandler import AbstractBaseHandler, HandlerError
-
 
 class ArticleHandler(AbstractBaseHandler):
     @classmethod
@@ -10,8 +7,4 @@ class ArticleHandler(AbstractBaseHandler):
         article = Article(url)
         article.download()
         article.parse()
-
-        title = article.title
-        body = article.text
-
-        return Comment(title, body)
+        return { "title" : article.title , "body" : article.text }
