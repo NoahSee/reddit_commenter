@@ -1,15 +1,17 @@
-# reddit_commenter
+** reddit_commenter **
+
+Posts articles linked in r/singapore as comments.
 
 Initial code obtained from
 https://github.com/fterh/sneakpeek
 
-# Mongo DB
+** Mongo DB **
 
-Database Name: MyDatabase
-Collection: SubmissionRecords
-Doccument: [id, title, url, created_utc]
+- Database Name: MyDatabase
+- Collection: SubmissionRecords
+- Doccument: [id, title, url, created_utc]
 
-# AWS Lambda
+** AWS Lambda **
 
 Layer
 Allows external libraries to be used in AWS Lambda.
