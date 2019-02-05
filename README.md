@@ -1,6 +1,13 @@
 # reddit_commenter
 
-# Deployed on AWS Lambda + MongoDB Atlas
+Initial code obtained from
+https://github.com/fterh/sneakpeek
+
+# Mongo DB
+
+Database Name: MyDatabase
+Collection: SubmissionRecords
+Doccument: [id, title, url, created_utc]
 
 # AWS Lambda
 
