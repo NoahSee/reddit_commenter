@@ -18,7 +18,7 @@ https://github.com/fterh/sneakpeek
 
 ## AWS Lambda
 
-#### Layer
+### Layer
 #### Allows external libraries to be used in AWS Lambda.
 - package.zip is used to create the layer.
 - package.zip must incude folder lib > python3.6 > site-packages > ...
@@ -29,11 +29,11 @@ https://github.com/fterh/sneakpeek
   - tldextract
   - pymongo
 
-#### Handler
+### Handler
 #### Calls function lambda_handler() in lambda_function.py file when triggered.
 - lambda_function.lambda_handler
 
-#### Trigger
+### Trigger
 #### Runs script every 5 minutes.
 - Cloudwatch Events as "every_5_minutes"
 
