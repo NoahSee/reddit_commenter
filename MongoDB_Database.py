@@ -9,7 +9,7 @@ class Database:
         """
         client = pymongo.MongoClient(connectionstring)
         database = client.MyDatabase
-        self.collection = database.SubmissionHistory
+        self.collection = database.SubmissionRecords
 
     def AddSubmissionRecord(self, data):
         """
