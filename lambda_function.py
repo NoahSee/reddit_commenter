@@ -31,7 +31,7 @@ db = Database(secret["MongoDB"])
 
 # (subreddit)
 reddit = praw.Reddit(**secret['Reddit'])          
-subreddit = reddit.subreddit("singapore")
+subreddit = reddit.subreddit("test")
 
 ### Main Function ##############################################################
 
@@ -76,3 +76,5 @@ def process_subreddit(test = False):
 def lambda_handler(event, context):
     process_subreddit(test=False)
     return 'Done'
+
+process_subreddit(test=False)
